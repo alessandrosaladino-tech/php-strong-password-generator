@@ -89,7 +89,7 @@ include __DIR__ . "./functions.php";
                     </div>
                 </div>
 
-                <div class="mt-3">
+                <div class="mt-3 text-start">
                     <button type="submit" class="btn btn-primary">Invia</button> 
                     <button type="reset" class="btn btn-dark">Annulla</button>
                 </div>
