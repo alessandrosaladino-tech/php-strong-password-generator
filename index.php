@@ -22,11 +22,11 @@ function gen_psw($length)
 {
 
     //Vari elementi che potrebbe contenere la psw
-    $letters = "abcdefghilmnopqrstuvzxywjkABCDEFGHILMNOPQRSTUVZXYWJK";
+    $letters = "ABCDEFGHILMNOPQRSTUVZXYWJKabcdefghilmnopqrstuvzxywjk";
 
     $numbers = "1234567890";
 
-    $symbols = "!$%&/()=?-_,;.:@#[+*]";
+    $symbols = "@!$%*=?-]_,/.:;#()[+&";
 
     //Container per le tutte e 3 le variabili
     $psw_container = $letters . $numbers . $symbols;
@@ -76,14 +76,69 @@ if (isset($_GET["length"])) {
 
 
     <header>
-        <div class="container">
+        <div class="container text-center">
             <h1>Strong Password Generator</h1>
         </div>
     </header>
 
-    <div class="container">
+    <div class="container text-center">
+
         <div class="row">
             <h3>Genera una password sicura</h3>
+            <div class="col border rounded-2 p-3">
+                <p class="m-0"><?= $result ?></p>
+            </div>
+        </div>
+
+        <div class="col">
+
+            <form action="" method="GET">
+                <div class="mb-3 d-flex align-items-center mt-5">
+                    <label for="length" class="form-label">Lunghezza Password:</label>
+                    <input type="number" class="form-control ms-3" name="length" id="length" placeholder="" min="5" max="30" value="5" style="width: 4.5rem;">
+                </div>
+
+                <div class="d-flex align-items-center">
+
+                    <h4>Consenti ripetizioni di uno o più caratteri</h4>
+
+                    <div class="form-check" style="margin-left: 15rem;">
+                        <input class="form-check-input" type="radio" name="no_repeat" id="no_repeat" value="repeat_chars">
+                        <label class="form-check-label" for="no_repeat"> No</label>
+                    </div>
+
+
+                    <div class="form-check ms-2">
+                        <input class="form-check-input" type="radio" name="repeat" id="repeat" value="repeat_chars" checked>
+                        <label class="form-check-label" for="repeat"> Si </label>
+                    </div>
+
+                </div>
+
+                <div class="container d-flex justify-content-center align-items-center flex-column ms-5 text-center">
+                    <div class="form-check form-check-inline text-center">
+                        <input class="form-check-input" type="checkbox" id="letters" value="letters" checked>
+                        <label class="form-check-label" for="letters">Letere</label>
+                    </div>
+                    <div class="form-check form-check-inline text-center">
+                        <input class="form-check-input" type="checkbox" id="numbers" value="numbers" checked>
+                        <label class="form-check-label" for="numbers">Numeri</label>
+                    </div>
+                    <div class="form-check form-check-inline text-center">
+                        <input class="form-check-input" type="checkbox" id="symbols" value="symbols" checked>
+                        <label class="form-check-label" for="symbols">Simboli</label>
+                    </div>
+                </div>
+
+                <div class="mt-3">
+                    <button type="submit" class="btn btn-primary">Invia</button> 
+                    <button type="reset" class="btn btn-dark">Annulla</button>
+                </div>
+
+            </form>
+
+
+
         </div>
     </div>
 
