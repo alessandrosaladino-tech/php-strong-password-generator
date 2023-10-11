@@ -115,10 +115,10 @@ if (isset($_GET["length"])) {
 
                 </div>
 
-                <div class="container d-flex justify-content-center align-items-center flex-column ms-5 text-center">
+                <div class="container d-flex justify-content-center align-items-center flex-column ms-5 text-center" style="padding-left: 5rem;">
                     <div class="form-check form-check-inline text-center">
                         <input class="form-check-input" type="checkbox" id="letters" value="letters" checked>
-                        <label class="form-check-label" for="letters">Letere</label>
+                        <label class="form-check-label" for="letters">Lettere</label>
                     </div>
                     <div class="form-check form-check-inline text-center">
                         <input class="form-check-input" type="checkbox" id="numbers" value="numbers" checked>
